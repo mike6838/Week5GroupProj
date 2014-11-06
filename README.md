@@ -33,22 +33,42 @@ Discuss what your core pages are and what your core user flows are.  There shoul
 completion.
 
 #### User Stories
-Create a solid set of user stories for your application.  Use your wireframes to guide stories (ie what happens when a user clicks here?).
+Sprint #1 - MVP
+User can sign-in
+User can create a survey
+User can create a choice to a question (as many as the user wants)
+User can view their survey results
+User can take another user's survey
+User can create a question on a survey (non-dynamically)
+User can create a choice to a question (non-dynamically)
+User can edit their questions
+User can delete their survey
 
-You have two types of users in this application, survey creators and survey takers; build stories for both.
+Sprint #2
+User can create a question on a survey (dynamically)
+User can create a choice to a question (dynamically)
+User is prompted to sign-in using a pop-up model
 
-List your user stories in Trello.
+Sprint #3
+User can view a visualization of survey results
 
 #### MVP
 Decide what your MVP will be.  Make sure you have wireframes and user stories for all parts of your MVP.
+Done: Sprint #1.
 
 Create a repository for your project. In your repository README include
   * Team name and team members
+      - Team stressed out (lol)
   * A brief description of your MVP
+      - Done: We are getting the basic user experience. See Sprint #1
   * A link to your team Trello board
+      - https://trello.com/b/e1xv17Ze
   * A link to your wireframes
+      - https://drive.google.com/file/d/0B_GIpF6E1kPRcVVFZXR4NllmLVdpYVBsQkpuaEdnV0hfakRv/view?usp=sharing
   * A brief description of your team dynamic and git workflow.
-
+      - Stan/Youngsun: controller
+      - Michalel: DB Creation & Migration
+      - Lyman: Readme & View
 
 ###Release 1 : Models
 
