@@ -1,4 +1,4 @@
-class Question < ActiveRecord::Base
+class Choice < ActiveRecord::Base
   # Remember to create a migration!
   belongs_to :survey
   has_many :choices
