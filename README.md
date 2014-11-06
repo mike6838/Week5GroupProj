@@ -69,6 +69,7 @@ Create a repository for your project. In your repository README include
       - Stan/Youngsun: controller
       - Michalel: DB Creation & Migration
       - Lyman: Readme & View
+      - We are all working on different features and each branch will named by the feature.  When completed we will create a pull request and review the request together before merging.
 
 ###Release 1 : Models
 
