@@ -1,0 +1,7 @@
+<% if current_user == nil %>
+  <%= erb :_login_create %>
+<% else %>
+  <%= erb :_header %>
+  <%= erb :_current_user_surveys %>
+  <%= erb :_all_user_surveys %>
+<% end %>

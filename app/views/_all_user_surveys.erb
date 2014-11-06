@@ -1,0 +1,8 @@
+<h3>Here are all other Surveys</h3>
+<% Survey.all.each do |survey| %>
+  <% if survey.user_id != current_user.id %>
+  <ul>
+    <li><a href="survey/<%= survey.id %>"><%= puts survey.title %></a></li>
+    <% end %>
+  </ul>
+<% end %>
