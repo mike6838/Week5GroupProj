@@ -1,3 +1,5 @@
+require 'faker'
+
 module Seed
   # Create Users
   def self.populate
@@ -8,21 +10,21 @@ module Seed
     # Create Surveys
     5.times do
       User.all.each do |user|
-        user.surveys.create(name: Faker::Lorem.word , description: Faker::Lorem.sentence(3, true, 4))
+        user.surveys.create(title: Faker::Lorem.word , description: Faker::Lorem.sentence(3, true, 4))
       end
     end
 
     # Create Questions
     5.times do
       Survey.all.each do |survey|
-        survey.questions.create(content: Faker::Lorem.sentence(3, true, 4))
+        survey.questions.create(question_str: Faker::Lorem.sentence(3, true, 4))
       end
     end
 
     # Possible Choices
     5.times do
       Question.all.each do |question|
-        question.choices.create(content: Faker::Lorem.word)
+        question.choices.create(choice_str: Faker::Lorem.word)
       end
     end
 
