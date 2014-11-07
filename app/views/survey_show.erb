@@ -5,8 +5,9 @@
   <% @survey.questions.each do |question| %>
     <li><%= question.question_str %></li>
     <% question.choices.each do |choice| %>
+    <form action="/surveys/:survey_id" method="post">
       <ul>
-        <li><%= choice.choice_str %></li>
+        <li><input type="radio" name="radio" value="<%= choice.choice_str %>"><%= choice.choice_str %></li>
       </ul>
      <% end %>
   <% end %>

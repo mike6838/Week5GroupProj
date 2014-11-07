@@ -12,7 +12,7 @@ $(document).ready(function() {
 
     });
 
-    $(document).on('click', '.submit', function(event){
+    $("#new_question_button").on('click', '.submit', function(event){
       event.preventDefault();
       $question_str = $('input[name=question_str]').val()
       $choice_str1 = $('input[name=choice_str1]').val()
