@@ -8,19 +8,23 @@
     </form>
 </div>
 <h3>Your filthy question!</h3>
-<div>
-  <form id="question_str"/>
-    <input type="text" name="question_str" placeholder="Your question right here"/>
-    <input class="btn btn-lg btn-success" type="submit" value="Submit Question" />
-  </form>
+<button id="new_question_button">New Question</button>
+<div id="question_list">
+  <div id="question_area">
+    <form id="question_str" style="display:none"/>
+      <input name="question_str" method="Post" placeholder="Your question right here"/>
+      <br>
+      <input name="choice_str1" method="Post" placeholder="Your choice right here"/>
+      <br>
+      <input name="choice_str2" method="Post" placeholder="Your choice right here"/>
+      <br>
+      <input name="choice_str3" method="Post" placeholder="Your choice right here"/>
+      <br>
+      <input name="choice_str4" method="Post" placeholder="Your choice right here"/>
+      <br>
+      <input name="choice_str5" method="Post" placeholder="Your choice right here"/>
+      <input class="question_button" type="submit" value="Submit Question" />
+    </form>
 
-</div>
-<br>
-<h3>Choice</h3>
-<div>
-  <form id="choice_str"/>
-    <input type="text" name="choice_str" placeholder="Your choices right here"/>
-    <input class="btn btn-lg btn-success" type="submit" value="Submit Choice" />
-    <input class="btn btn-lg btn-success" type="submit" value="Add Choice" />
-  </form>
+  </div>
 </div>
