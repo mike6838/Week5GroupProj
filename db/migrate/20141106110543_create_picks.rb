@@ -2,7 +2,8 @@ class CreatePicks < ActiveRecord::Migration
   def change
     create_table :picks do |t|
       t.references :user
-      t.references :choice
+      t.references :question
+      t.integer :number
 
       t.timestamps
     end

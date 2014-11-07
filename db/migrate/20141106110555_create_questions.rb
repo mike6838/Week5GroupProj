@@ -4,6 +4,7 @@ class CreateQuestions < ActiveRecord::Migration
       t.string :question_str
       t.references :survey
 
+
       t.timestamps
     end
   end
