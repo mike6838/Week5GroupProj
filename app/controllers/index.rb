@@ -12,7 +12,7 @@ end
 post "/login" do
   user = User.find_by(email: params[:email])
   if user
-    if user.password == params[:password]
+    if user.password_hash == params[:password]
       session[:user_id] = user.id
       redirect "/"
     else

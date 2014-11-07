@@ -16,10 +16,7 @@ $(document).ready(function() {
       event.preventDefault();
       $question_str = $('input[name=question_str]').val()
       $choice_str1 = $('input[name=choice_str1]').val()
-      $choice_str2 = $('input[name=choice_str2]').val()
-      $choice_str3 = $('input[name=choice_str3]').val()
-      $choice_str4 = $('input[name=choice_str4]').val()
-      $choice_str5 = $('input[name=choice_str5]').val()
+
       $('#question_list').append('<p>' + $question_str + '</p>');
       $('#question_list').append('<p>' + $choice_str1 + '</p>');
       $('#question_list').append('<p>' + $choice_str2 + '</p>');

@@ -21,16 +21,9 @@ module Seed
       end
     end
 
-    # Possible Choices
-    5.times do
-      Question.all.each do |question|
-        question.choices.create(choice_str: Faker::Lorem.word)
-      end
-    end
-
     # Picks
     1250.times do
-      Pick.create(user_id: User.all.sample.id, choice_id: Choice.all.sample.id)
+      Pick.create(user_id: User.all.sample.id, question_id: Question.all.sample.id, number: rand(5))
     end
   end
 end
