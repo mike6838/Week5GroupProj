@@ -1,17 +1,20 @@
+require 'bcrypt'
+
 class User < ActiveRecord::Base
   # Remember to create a migration!
   has_many :picks
   has_many :choices, through: :picks
   has_many :surveys
 
+
   include BCrypt
 
-  def password
-    @password ||= Password.new(secure_password)
-  end
+    def password
+      @password ||= Password.new(password_hash)
+    end
 
-  def password=(new_password)
-    @password = Password.create(new_password)
-    self.secure_password = @password
-  end
+    def password=(new_password)
+      @password = Password.create(new_password)
+      self.password_hash = @password
+    end
 end
