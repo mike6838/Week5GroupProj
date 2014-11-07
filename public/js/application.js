@@ -15,14 +15,8 @@ $(document).ready(function() {
     $("#new_question_button").on('click', '.submit', function(event){
       event.preventDefault();
       $question_str = $('input[name=question_str]').val()
-      $choice_str1 = $('input[name=choice_str1]').val()
 
       $('#question_list').append('<p>' + $question_str + '</p>');
-      $('#question_list').append('<p>' + $choice_str1 + '</p>');
-      $('#question_list').append('<p>' + $choice_str2 + '</p>');
-      $('#question_list').append('<p>' + $choice_str3 + '</p>');
-      $('#question_list').append('<p>' + $choice_str4 + '</p>');
-      $('#question_list').append('<p>' + $choice_str5 + '</p>');
       $('#question_str').hide();
       $('#new_question_button').show();
       $('input:text').val('');

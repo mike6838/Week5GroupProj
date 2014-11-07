@@ -77,35 +77,18 @@ post '/surveys/:survey_id/questions' do
   redirect '/'
 end
 
-#---------CREATE_CHOICE-----------
-
-get '/surveys/:survey_id/questions/:question_id/choices/new' do
-  erb :new_choices
-end
-
-post '/surveys/:survey_id/questions/:question_id/choices' do
-  # @choice = Choice.all
-  @question = Question.find(params[:question_id])
-  @question.choices << Choice.create(choice_str: params[:choice_str])
-
-
-  redirect '/'
-end
-
-
-
 #---------TAKE-SURVEY-------------
 
 get '/surveys/:survey_id' do
   @survey = Survey.find(params[:survey_id])
-  # @questions = @survey.qustions
+  # @questions = @survey.questions
   # @choices = @questions.choices
   erb :survey_show
 end
 
 post '/surveys/:survey_id' do
   @survey = Survey.find(params[:survey_id])
-  # @questions = @survey.qustions
+  # @questions = @survey.questions
   # @choices = @questions.choices
   redirect '/'
 end
