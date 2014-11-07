@@ -8,14 +8,14 @@ module Seed
     end
 
     # Create Surveys
-    5.times do
+    1.times do
       User.all.each do |user|
         user.surveys.create(title: Faker::Lorem.word , description: Faker::Lorem.sentence(3, true, 4))
       end
     end
 
     # Create Questions
-    5.times do
+    1.times do
       Survey.all.each do |survey|
         survey.questions.create(question_str: Faker::Lorem.sentence(3, true, 4))
       end
@@ -23,7 +23,7 @@ module Seed
 
     # Picks
     1250.times do
-      Pick.create(user_id: User.all.sample.id, question_id: Question.all.sample.id, number: rand(5))
+      Pick.create(user_id: User.all.sample.id, question_id: Question.all.sample.id, answer_number: rand(5))
     end
   end
 end
