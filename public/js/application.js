@@ -5,20 +5,29 @@ $(document).ready(function() {
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
 
-    $("#new_comment_button").on('click', function() {
+    $("#new_question_button").on('click', function() {
     // $('form').show();
-    $('form').toggle();
-    $('#new_comment_button').hide();
+    $('#question_str').show();
+    $('#new_question_button').hide();
 
     });
 
     $(document).on('click', '.submit', function(event){
       event.preventDefault();
-      $content = $('input[name=content]').val()
-      $name = $('input[name=name]').val()
-      $('#comment_list').append('<li> <span class = "author">' + $content + '<br>' + $name + '<span> </li>');
-      $('form').hide();
-      $('#new_comment_button').show();
+      $question_str = $('input[name=question_str]').val()
+      $choice_str1 = $('input[name=choice_str1]').val()
+      $choice_str2 = $('input[name=choice_str2]').val()
+      $choice_str3 = $('input[name=choice_str3]').val()
+      $choice_str4 = $('input[name=choice_str4]').val()
+      $choice_str5 = $('input[name=choice_str5]').val()
+      $('#question_list').append('<p>' + $question_str + '</p>');
+      $('#question_list').append('<p>' + $choice_str1 + '</p>');
+      $('#question_list').append('<p>' + $choice_str2 + '</p>');
+      $('#question_list').append('<p>' + $choice_str3 + '</p>');
+      $('#question_list').append('<p>' + $choice_str4 + '</p>');
+      $('#question_list').append('<p>' + $choice_str5 + '</p>');
+      $('#question_str').hide();
+      $('#new_question_button').show();
       $('input:text').val('');
   });
 });
