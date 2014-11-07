@@ -9,28 +9,33 @@ end
 
 #--------------SIGN_IN-------------
 
-post '/sessions' do
-  user = User.find_by_email(params[:email])
-  if user.password == params[:password]
-    session[:user_id] = user.id
-    redirect '/'
+post "/login" do
+  user = User.find_by(email: params[:email])
+  if user
+    if user.password_hash == params[:password_hash]
+      session[:user_id] = user.id
+      redirect "/"
+    else
+      p "Incorrect password"
+    end
   else
-    redirect '/sessions/new'
+      p "Sorry, that user doesn't exist"
   end
+  redirect '/'
 end
 
-delete '/sessions/:id' do
-  session.destroy
-  redirect '/'
+get '/logout' do
+  session[:user_id] = nil
+  redirect "/"
 end
 
 #--------------SIGN_UP------------
 
-get '/users/new' do
-  erb :sign_up
-end
+# get '/users/new' do
+#   erb :sign_up
+# end
 
-post '/users' do
+post '/users/new' do
   user = User.create(params[:user])
   session[:user_id] = user.id
   redirect '/'
@@ -39,7 +44,7 @@ end
 #------------CREATE_NEW_SURVEY----
 
 get '/surveys/new' do
-  erb :new_survey
+  erb :create_survey
 end
 
 post '/surveys/' do
@@ -89,17 +94,17 @@ end
 
 #---------TAKE-SURVEY-------------
 
-get '/surveys/:survey_id/take' do
+get '/surveys/:survey_id' do
   @survey = Survey.find(params[:survey_id])
-  @questions = @survey.qustions
-  @choices = @questions.choices
-  erb :take
+  # @questions = @survey.qustions
+  # @choices = @questions.choices
+  erb :survey_show
 end
 
 post '/surveys/:survey_id' do
   @survey = Survey.find(params[:survey_id])
-  @questions = @survey.qustions
-  @choices = @questions.choices
+  # @questions = @survey.qustions
+  # @choices = @questions.choices
   redirect '/'
 end
 
