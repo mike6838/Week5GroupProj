@@ -12,7 +12,7 @@ end
 post "/login" do
   user = User.find_by(email: params[:email])
   if user
-    if user.password_hash == params[:password_hash]
+    if user.password == params[:password]
       session[:user_id] = user.id
       redirect "/"
     else
@@ -37,6 +37,8 @@ end
 
 post '/users/new' do
   user = User.create(params[:user])
+  user.password = params[:password]
+  user.save!
   session[:user_id] = user.id
   redirect '/'
 end

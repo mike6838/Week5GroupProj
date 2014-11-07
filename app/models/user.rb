@@ -4,4 +4,14 @@ class User < ActiveRecord::Base
   has_many :choices, through: :picks
   has_many :surveys
 
+  include BCrypt
+
+  def password
+    @password ||= Password.new(secure_password)
+  end
+
+  def password=(new_password)
+    @password = Password.create(new_password)
+    self.secure_password = @password
+  end
 end
