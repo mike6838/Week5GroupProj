@@ -2,7 +2,7 @@
   <form class="form-signin" action="/login" method="post" >
     <h2 class="form-signin-heading">Please sign in:</h2>
     <input type="email" class="form-control" name="email" placeholder="Email address" required autofocus>
-    <input type="password" class="form-control" name="password_hash" placeholder="Password" required>
+    <input type="password" class="form-control" name="password" placeholder="Password" required>
     <input type="submit" class="btn btn-lg btn-primary btn-block" value="Log in!">
   </form>
 </div>
@@ -11,7 +11,7 @@
   <form id="new_user" class="form-signin" action="/users/new" method="post" >
     <h2 class="form-signin-heading">Sign up:</h2>
     <input class="form-control" type="text" name="user[email]" placeholder="Email address">
-    <input class="form-control" type="password" name="user[password_hash]" placeholder="Password must be at least 8 characters">
+    <input class="form-control" type="password" name="user[password]" placeholder="Password must be at least 8 characters">
     <input type="submit" class="btn btn-lg btn-primary btn-block" value="Sign up!">
   </form>
 </div>
