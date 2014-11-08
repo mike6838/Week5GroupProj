@@ -116,7 +116,7 @@ end
 
 #---------GET_RESULTS-------------
 
-get '/survey/:survey_id/results' do
+get '/surveys/:survey_id/results' do
   @survey = Survey.find(params[:survey_id])
-  erb :results
+  erb :survey_show_user
 end

@@ -1,0 +1,16 @@
+<div class='question'>
+  <h1><%= @survey.title %></h1>
+  <h3><%= @survey.description %></h3>
+  <ol>
+  <% @survey.questions.each do |question| %>
+    <li><%= question.question_str %></li>
+          <ul>
+            <li>Strongly Disagree: <%= Pick.where(question_id: question.id, answer_number: 1).length %> votes</li>
+            <li>Disagree: <%= Pick.where(question_id: question.id, answer_number: 2).length %> votes</li>
+            <li>Neutral: <%= Pick.where(question_id: question.id, answer_number: 3).length %> votes</li>
+            <li>Agree: <%= Pick.where(question_id: question.id, answer_number: 4).length %> votes</li>
+            <li>Strongly Agree: <%= Pick.where(question_id: question.id, answer_number: 5).length %> votes</li>
+          </ul>
+  <% end %>
+  </ol>
+</div>
