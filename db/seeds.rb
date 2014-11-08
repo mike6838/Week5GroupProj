@@ -4,7 +4,7 @@ module Seed
   # Create Users
   def self.populate
     10.times do
-      User.create(email: Faker::Internet.email, password_hash: Faker::Internet.password(8))
+      User.create(email: Faker::Internet.email, password_hash: "password")
     end
 
     # Create Surveys
@@ -23,7 +23,7 @@ module Seed
 
     # Picks
     1250.times do
-      Pick.create(user_id: User.all.sample.id, question_id: Question.all.sample.id, answer_number: rand(5))
+      Pick.create(user_id: User.all.sample.id, question_id: Question.all.sample.id, answer_number: rand(1..5))
     end
   end
 end
