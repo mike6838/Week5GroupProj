@@ -1,9 +1,7 @@
-<form action="/surveys/:survey_id" method="post">
-      <ul>
-        <li><input type="radio" name="radio" value="Strongly Disagree>">Strongly Disagree</li>
-        <li><input type="radio" name="radio" value="Disagree">Disagree</li>
-        <li><input type="radio" name="radio" value="Neutral">Neutral</li>
-        <li><input type="radio" name="radio" value="Agree">Agree</li>
-        <li><input type="radio" name="radio" value="Strongly Agree">Strongly Agree</li>
-      </ul>
-    </form>
+<ul>
+  <li><input type="radio" name="question_<%= question.id %>" value="1">Strongly Disagree</li>
+  <li><input type="radio" name="question_<%= question.id %>" value="2">Disagree</li>
+  <li><input type="radio" name="question_<%= question.id %>" value="3">Neutral</li>
+  <li><input type="radio" name="question_<%= question.id %>" value="4">Agree</li>
+  <li><input type="radio" name="question_<%= question.id %>" value="5">Strongly Agree</li>
+</ul>

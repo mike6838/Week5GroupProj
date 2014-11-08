@@ -79,17 +79,38 @@ end
 
 #---------TAKE-SURVEY-------------
 
-get '/surveys/:survey_id' do
+get '/surveys/:survey_id/take' do
   @survey = Survey.find(params[:survey_id])
   # @questions = @survey.questions
   # @choices = @questions.choices
   erb :survey_show
 end
 
-post '/surveys/:survey_id' do
+post '/surveys/:survey_id/take' do
+  # p "here"
+  # p  params
+  # p params[:survey_id]
+
   @survey = Survey.find(params[:survey_id])
-  # @questions = @survey.questions
-  # @choices = @questions.choices
+  @questions = @survey.questions
+   Pick.create(user_id: session[:user_id], question_id: question.id, number: params[:question_3] )
+    Pick.create(user_id: session[:user_id], question_id: question.id, number: params[:question_53] )
+     Pick.create(user_id: session[:user_id], question_id: question.id, number: params[:question_103] )
+      Pick.create(user_id: session[:user_id], question_id: question.id, number: params[:question_153] )
+      Pick.create(user_id: session[:user_id], question_id: question.id, number: params[:question_203] )
+
+
+
+
+  # @questions.each_with_index do |question|
+  #   p "here"
+  #   p params[:question_id]
+
+
+  #   # @question_sym = question.id.to_sym
+  #   Pick.create(user_id: session[:user_id], question_id: question.id, number: params[:question_id] )
+  # end
+
   redirect '/'
 end
 

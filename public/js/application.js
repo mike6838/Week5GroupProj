@@ -20,5 +20,22 @@ $(document).ready(function() {
       $('#question_str').hide();
       $('#new_question_button').show();
       $('input:text').val('');
-  });
+    });
+
+    $('#take_survey').on('submit', function(e){
+      e.preventDefault();
+      console.log("survey form");
+      form_data=$(this).serialize();
+      console.log(form_data);
+      $.ajax({
+        url:this.action,
+        type:this.method,
+        data:form_data
+      }).done(function(server_data){
+        console.log("success")
+      }).fail(function(){
+        console.log("fail")
+      })
+    })
+
 });
